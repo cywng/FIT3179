@@ -1,0 +1,15 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Percentage of Children who repoted having been bullied in the last term (2018)",
+  "width": 800,
+  "height": 600,
+  "projection": {"type":"azimuthalEqualArea"},
+  "layer": [
+    {
+    "data": {
+      "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/VICLGAtopojson.json",
+      "format": {"type": "topojson", "feature": "VICLGAgeojson"}},
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    }
+    ]
+}
