@@ -1,9 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Percentage of Children who repoted having been bullied in the last term (2018)",
+  "title": "Year 7-9 students who reported being bullied in the last term (2018)",
   "width": 800,
   "height": 600,
-  "projection": {"rotate":[219,60,0],"type":"azimuthalEqualArea"},
+  "projection": { 
+	  "type": "conicEqualArea",
+    "parallels": [-36, -38], 
+	  "rotate": [-145, 0, 0]
+    },
   "layer": [
     {
     "data": {
