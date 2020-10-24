@@ -24,7 +24,6 @@
             "filter": "datum.Year==Year"
         }
     ],
-    "mark": "circle",
     "encoding": {
         "x": {
             "field": "NaplanAvg",
@@ -45,46 +44,78 @@
                     0.4
                 ]
             }
+        }
+    },
+    "layer": [
+        {
+            "mark": "circle",
+            "encoding": {
+                "color": {
+                    "field": "Total Students",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [
+                            1000,
+                            2000,
+                            3000,
+                            4000,
+                            5000
+                        ],
+                        "range": [
+                            "#adbac0",
+                            "#85b2be",
+                            "#4aacc1",
+                            "#22a1c2",
+                            "#2192c0",
+                            "#1e84be"
+                        ]
+                    }
+                }
+            }
         },
-        "color": {
-            "field": "Total Students",
-            "type": "quantitative",
-            "scale": {
-                "type": "threshold",
-                "domain": [
-                    1000,
-                    2000,
-                    3000,
-                    4000,
-                    5000
-                ],
-                "range": [
-                    "#adbac0",
-                    "#85b2be",
-                    "#4aacc1",
-                    "#22a1c2",
-                    "#2192c0",
-                    "#1e84be"
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 12,
+                "fontSize": 11
+            },
+            "encoding": {
+                "text": {
+                    "field": "LGA",
+                    "type": "nominal"
+                },
+                "color": {
+                    "value": "black"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['LGA'] == 'MONASH'||datum['LGA'] == 'MELBOURNE'||datum['LGA'] == 'STONNINGTON'||datum['LGA'] == 'HEPBURN'||datum['LGA'] == 'GREATER DANDENONG'||datum['LGA'] == 'MONASH'||datum['LGA'] == 'MONASH'||datum['LGA'] == 'MONASH'||datum['LGA'] == 'MONASH'||datum['LGA'] == 'MONASH'",
+                        "value": 1
+                    },
+                    "value": 0
+                },
+                "tooltip": [
+                    {
+                        "field": "LGA",
+                        "type": "nominal"
+                    },
+                    {
+                        "field": "Portion Bullied",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "NaplanAvg",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Total Students",
+                        "type": "quantitative"
+                    }
                 ]
             }
-        },
-        "tooltip": [
-            {
-                "field": "LGA",
-                "type": "nominal"
-            },
-            {
-                "field": "Portion Bullied",
-                "type": "quantitative"
-            },
-            {
-                "field": "NaplanAvg",
-                "type": "quantitative"
-            },
-            {
-                "field": "Total Students",
-                "type": "quantitative"
-            }
-        ]
-    }
+        }
+    ]
 }
