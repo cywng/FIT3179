@@ -1,0 +1,90 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 500,
+    "height": 400,
+    "title": "Bullying vs NAPLAN Results",
+    "data": {
+        "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/JoinedDataFiltered.csv"
+    },
+    "params": [
+        {
+            "name": "Year",
+            "value": 2008,
+            "bind": {
+                "input": "range",
+                "min": 2008,
+                "max": 2016,
+                "step": 1,
+                "name": "Year_select"
+            }
+        }
+    ],
+    "transform": [
+        {
+            "filter": "datum.Year==Year"
+        }
+    ],
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "field": "NaplanAvg",
+            "type": "quantitative",
+            "scale": {
+                "domain": [
+                    0.87,
+                    1
+                ]
+            }
+        },
+        "y": {
+            "field": "Portion Bullied",
+            "type": "quantitative",
+            "scale": {
+                "domain": [
+                    0,
+                    0.4
+                ]
+            }
+        },
+        "color": {
+            "field": "Total Students",
+            "type": "quantitative",
+            "scale": {
+                "type": "threshold",
+                "domain": [
+                    1000,
+                    2000,
+                    3000,
+                    4000,
+                    5000
+                ],
+                "range": [
+                    "#adbac0",
+                    "#85b2be",
+                    "#4aacc1",
+                    "#22a1c2",
+                    "#2192c0",
+                    "#1e84be"
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "LGA",
+                "type": "nominal"
+            },
+            {
+                "field": "Portion Bullied",
+                "type": "quantitative"
+            },
+            {
+                "field": "NaplanAvg",
+                "type": "quantitative"
+            },
+            {
+                "field": "Total Students",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

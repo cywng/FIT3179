@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Year 7-9 students who reported being bullied in the last term (2018)",
+  "width": 800,
+  "height": 600,
+  "projection": {
+    "type": "conicEqualArea",
+    "parallels": [
+      -36,
+      -38
+    ],
+    "rotate": [
+      -145,
+      0,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/VICLGAtopojson.json",
+        "format": {
+          "type": "topojson",
+          "feature": "VICLGAgeojson"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "gainsboro",
+        "stroke": "white"
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.vic_lga__3",
+            "type": "nominal",
+            "title": "Local Government Area"
+          },
+          {
+            "field": "Portion Bullied",
+            "type": "quantitative"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/VICLGAtopojson.json",
+        "format": {
+          "type": "topojson",
+          "feature": "VICLGAgeojson"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.vic_lga__3",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/JoinedDataFiltered.csv"
+            },
+            "key": "LGA",
+            "fields": [
+              "Portion Bullied"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape"
+      },
+      "encoding": {
+        "color": {
+          "field": "Portion Bullied",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "properties.vic_lga__3",
+            "type": "nominal",
+            "title": "Local Government Area"
+          },
+          {
+            "field": "Portion Bullied",
+            "type": "quantitative"
+          }
+        ]
+      }
+    }
+  ]
+}
