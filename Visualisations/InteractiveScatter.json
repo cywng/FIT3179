@@ -28,6 +28,7 @@
         "x": {
                     "field": "NaplanAvg",
                     "type": "quantitative",
+                    "title":"Naplan Score",
                     "scale": {
                         "domain": [
                             0.87,
@@ -37,6 +38,7 @@
                 },
                 "y": {
                     "field": "Portion Bullied",
+                    "title":"Percent of students bullied",
                     "type": "quantitative",
                     "scale": {
                         "domain": [
@@ -93,7 +95,7 @@
                 },
                 "opacity": {
                     "condition": {
-                        "test": "datum['LGA'] == 'MONASH'||datum['LGA'] == 'MELBOURNE'||datum['LGA'] == 'BOROONDARA'||datum['LGA'] == 'CASEY'||datum['LGA'] == 'GREATER DANDENONG'||datum['LGA'] == 'WYNDHAM'||datum['LGA'] == 'HUME'||datum['LGA'] == 'BIRMBANK'||datum['LGA'] == 'MANNINGHAM'||datum['LGA'] == 'BENALLA'",
+                        "test": "datum['LGA'] == 'MONASH'||datum['LGA'] == 'WHITEHORSE'||datum['LGA'] == 'BOROONDARA'||datum['LGA'] == 'CASEY'||datum['LGA'] == 'GREATER DANDENONG'||datum['LGA'] == 'WYNDHAM'||datum['LGA'] == 'HUME'||datum['LGA'] == 'BIRMBANK'||datum['LGA'] == 'MANNINGHAM'||datum['LGA'] == 'BENALLA'",
                         "value": 1
                     },
                     "value": 0

@@ -6,16 +6,37 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  
 </head>
 <body>
 
-<div id="vis"></div>
+<h1>Homework Week 10: A work in progress for Assignment 2.</h1>
+
+<h2>Victoria at a glance.</h2>
+<div id="choropleth_map"></div>
+
+<h2>A comparison between reported bullying and NAPLAN results.</h2>
+<div id="scatter_plot"></div>
+
+<p>The NAPLAN score is derived from the proportion of students who met or exceeded the benchmarks, as set by the VCAA. The literacy and numeracy results have been averaged.</p>
 
 <script type="text/javascript">
-  var spec = "https://raw.githubusercontent.com/cywng/FIT3179/main/choropleth.json";
-  vegaEmbed('#vis', spec).then(function(result) {
+  
+  var vis1 = "Visualisations/choropleth.json";
+  
+  vegaEmbed('#choropleth_map', vis1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis2 = "Visualisations/InteractiveScatter";
+  
+  vegaEmbed('#scatter_plot', vis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
+
 </body>
 </html>

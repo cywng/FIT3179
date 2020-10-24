@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Year 7-9 students who reported being bullied in the last term (2018)",
+  "title": "Proportion of Year 7-9 students who reported being bullied in the last term (2018)",
   "width": 800,
   "height": 600,
   "projection": {
@@ -71,7 +71,8 @@
       "encoding": {
         "color": {
           "field": "Portion Bullied",
-          "type": "quantitative"
+          "type": "quantitative",
+          "title": "Proportion of students bullied"
         },
         "tooltip": [
           {
@@ -81,7 +82,8 @@
           },
           {
             "field": "Portion Bullied",
-            "type": "quantitative"
+            "type": "quantitative",
+            "title": "Proportion of bullying"
           }
         ]
       }
