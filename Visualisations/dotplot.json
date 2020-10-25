@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 500,
+    "height": 300,
+    "title": "Bullying over time",
+    "data": {"url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/JoinedDataFiltered.csv"},
+    "transform": [
+      {
+        "filter": {
+          "field": "LGA",
+          "oneOf": ["WYNDHAM", "CASEY", "MONASH", "BENALLA", "HUME", "MELBOURNE","BRIMBANK","MORELAND"]
+        }
+      },
+      {"filter": {"field": "Year", "oneOf": [2008, 2016]}}
+    ],
+    "encoding": {
+      "x": {
+        "field": "Portion Bullied",
+        "type": "quantitative",
+        "title": "Portion of students bullied"
+      },
+      "y": {
+        "field": "LGA",
+        "type": "nominal",
+        "title": "Local Government Area",
+        "axis": {"offset": 5, "ticks": false, "minExtent": 70, "domain": false}
+      }
+    },
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "detail": {"field": "LGA", "type": "nominal"},
+          "color": {"value": "#db646f"}
+        }
+      },
+      {
+        "mark": {"type": "point", "filled": true},
+        "encoding": {
+          "color": {
+            "field": "Year",
+            "type": "ordinal",
+            "scale": {"domain": [2008, 2016], "range": ["#e6959c", "#911a24"]},
+            "title": "Year"
+          },
+          "size": {"value": 100},
+          "opacity": {"value": 1}
+        }
+      }
+    ]
+  }

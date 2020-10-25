@@ -1,0 +1,100 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "width": 400,
+    "height": 300,
+    "title": "Bullying vs NAPLAN Results",
+    "data": {
+        "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/VictoriaWideData.csv"
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "title": "Year"
+        },
+        "y": {
+            "field": "Percent",
+            "type": "quantitative",
+            "title": "Percent"
+        },
+        "color": {
+            "condition": {
+                "selection": "hover",
+                "field": "Gender",
+                "type": "nominal",
+                "legend": null
+            },
+            "value": "grey"
+        },
+        "opacity": {
+            "condition": {
+                "selection": "hover",
+                "value": 1
+            },
+            "value": 0.2
+        }
+    },
+    "layer": [
+        {
+            "description": "transparent layer to make it easier to trigger selection",
+            "selection": {
+                "hover": {
+                    "type": "single",
+                    "on": "mouseover",
+                    "empty": "all",
+                    "fields": [
+                        "Gender"
+                    ]
+                }
+            },
+            "mark": {
+                "type": "line",
+                "point": true,
+                "strokeWidth": 8,
+                "stroke": "transparent"
+            }
+        },
+        {
+            "mark": "line"
+        },
+        {
+            "encoding": {
+                "x": {
+                    "aggregate": "max",
+                    "field": "Year"
+                },
+                "y": {
+                    "aggregate": {
+                        "argmax": "Year"
+                    },
+                    "field": "Percent"
+                }
+            },
+            "layer": [
+                {
+                    "mark": {
+                        "type": "circle"
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "left",
+                        "dx": 4
+                    },
+                    "encoding": {
+                        "text": {
+                            "field": "Gender",
+                            "type": "nominal"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": null
+        }
+    }
+}
