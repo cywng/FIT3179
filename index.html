@@ -1,101 +1,122 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Bulying in Melbourne</title>
+  <title>Bullying in Melbourne</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
   <!-- Import pure.css -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
 
   <!-- custom style -->
   <style>
-    *{
+    * {
       font-family: 'Source Sans Pro', sans-serif;
     }
-    h1{
+
+    h1 {
       font-weight: 900;
     }
-     body{
-       background-color: lightgray;
-     }
-     .page{
-       width: 1700px;    
-       background-color: white;   
-       margin: auto;
-       padding: 50px;
-       padding-top: 35px;
+
+    body {
+      background-color: lightgray;
     }
-    .vis-container{
+
+    .page {
+      width: 1700px;
+      background-color: white;
+      margin: auto;
+      padding: 50px;
+      padding-top: 35px;
+    }
+
+    .vis-container {
       width: 100%;
     }
-    .description h2, h1{
-      margin-top:0px;
+
+    .description h2,
+    h1 {
+      margin-top: 0px;
     }
+
     .description-right {
       padding-left: 20px;
     }
-    .description-left{
+
+    .description-left {
       padding-right: 20px;
     }
-    .pure-g{
+
+    .pure-g {
       margin-bottom: 25px;
     }
-    .small-font{
-        font-size: 14px;
+
+    .small-font {
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
 
- <div class="page">
+  <div class="page">
 
-   <!-- pure grid group -->
+    <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h1>Bullying trends in Victoria (2008-2016)</h1>
         <p>subtitle about bullying</p>
       </div>
     </div>
-  <!-- end pure grid group -->
+    <!-- end pure grid group -->
 
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div id="vis1"  class="vis-container"></div>
+        <div id="vis1" class="vis-container"></div>
       </div>
       <div class="pure-u-1-4">
-        <div id="vis2"  class="vis-container"></div>
+        <div id="vis2" class="vis-container"></div>
       </div>
       <div class="pure-u-1-4">
         <div class="description description-right">
-            <h2>Gender Trends</h2>
-            <p>Text about time-trends in gender. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
-    </div>
-    
+          <h2>Gender Trends</h2>
+          <p>Text about time-trends in gender. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+        </div>
+      </div>
     </div>
     <!-- end pure grid group -->
 
     <!-- pure grid group -->
     <div class="pure-g">
-        <div class="pure-u-1-2">
-            <div id="vis3" class="vis-container"></div>
-          </div>
-        <div class="pure-u-1-4">
-            <div class="description description-right">
-                <h2>Melborune Metro</h2>
-                <p>Text about overall distribution in metro melb. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+      <div class="pure-u-1-2">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-4">
+        <div class="description description-right">
+          <h2>Melbourne Metro</h2>
+          <p>Text about overall distribution in metro melb. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Nisl suscipit adipiscing bibendum est ultricies integer quis auctor. Suscipit adipiscing bibendum
+            est ultricies. Fames ac turpis egestas integer eget aliquet
+            nibh praesent tristique. Magna ac placerat vestibulum lectus mauris ultrices eros in. Egestas dui id
+            ornare arcu odio ut sem nulla pharetra. Nec ultrices dui sapien
+            eget mi. Arcu cursus euismod quis viverra. Sapien pellentesque habitant morbi tristique senectus et netus
+            et malesuada. Amet consectetur adipiscing elit pellentesque.
+            Posuere morbi leo urna molestie at elementum eu facilisis sed. </p>
         </div>
         <div class="pure-u-1-4">
-            <div id="vis4" class="vis-container"></div>
-          </div>
+          <div id="vis4" class="vis-container"></div>
         </div>
+      </div>
     </div>
     <!-- end pure grid group -->
 
@@ -104,54 +125,62 @@
       <div class="pure-u-1-2">
         <div class="description description-left">
           <h2>This is the third section</h2>
-          <p>More text goes here, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+          <p>More text goes here, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.
+          </p>
         </div>
       </div>
       <div class="pure-u-1-4">
-        <div id="vis5"  class="vis-container"></div>
+        <div id="vis5" class="vis-container"></div>
       </div>
       <div class="pure-u-1-4">
         <div class="description description-right">
-            <h2>Decrease metro</h2>
-            <p>Text about time-trends in metro. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
-    </div>
-    
+          <h2>Decrease metro</h2>
+          <p>Text about time-trends in metro. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+        </div>
+      </div>
     </div>
     <!-- end pure grid group -->
-  
+
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
-        <p>This visualisation is created by <a href="https://github.com/cywng">Chang Yu Wang</a>, adapted from an example made by <a href="https://github.com/KadekSatriadi" target="_blank">Kadek Satriadi</a>. The data is from multiple files found <a href="https://discover.data.vic.gov.au/dataset?sort=score+desc%2C+metadata_modified+desc&q=&organization=&groups=education&res_format=" target="_blank">here</href>.</p>
+        <p>This visualisation is created by <a href="https://github.com/cywng">Chang Yu Wang</a>, adapted from an
+          example made by <a href="https://github.com/KadekSatriadi" target="_blank">Kadek Satriadi</a>. The data is
+          from multiple files found <a
+            href="https://discover.data.vic.gov.au/dataset?sort=score+desc%2C+metadata_modified+desc&q=&organization=&groups=education&res_format="
+            target="_blank">here</href>.</p>
       </div>
     </div>
   </div> <!-- end page -->
-   
-<script type="text/javascript">
-  var specVis1 = "./Visualisations/choropleth.json";
-  var specVis2= "./Visualisations/genderLine.json";
-  var specVis3= "./Visualisations/InteractiveScatter.json";
-  var specVis4= "./Visualisations/choroplethMetroMelb.json";
-  var specVis5= "./Visualisations/dotplot.json";
 
-  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-  
-   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+  <script type="text/javascript">
+    var specVis1 = "./Visualisations/choropleth.json";
+    var specVis2 = "./Visualisations/genderLine.json";
+    var specVis3 = "./Visualisations/InteractiveScatter.json";
+    var specVis4 = "./Visualisations/choroplethMetroMelb.json";
+    var specVis5 = "./Visualisations/dotplot.json";
 
-  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+    vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
 
-  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
 
-  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
 </body>
+
 </html>
