@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Proportion of Year 7-9 students who reported being bullied in the last term (2018)",
-  "width": 500,
-  "height": 350,
+  "width": 800,
+  "height": 600,
   "projection": {
     "type": "conicEqualArea",
     "parallels": [
@@ -15,14 +15,21 @@
       0
     ]
   },
-  "data": {
-  "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/VICLGAtopojson.json",
-  "format": {
-  "type": "topojson",
-  "feature": "VICLGAgeojson"
-  }
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/VICLGAtopojson.json",
+        "format": {
+          "type": "topojson",
+          "feature": "VICLGAgeojson"
+        }
       },
-            "encoding": {
+      "mark": {
+        "type": "geoshape",
+        "fill": "gainsboro",
+        "stroke": "white"
+      },
+      "encoding": {
         "tooltip": [
           {
             "field": "properties.vic_lga__3",
@@ -34,17 +41,16 @@
             "type": "quantitative"
           }
         ]
-      },
-  "layer": [
-    {
-      "mark": {
-        "type": "geoshape",
-        "fill": "gainsboro",
-        "stroke": "white"
       }
     },
     {
-
+      "data": {
+        "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/VICLGAtopojson.json",
+        "format": {
+          "type": "topojson",
+          "feature": "VICLGAgeojson"
+        }
+      },
       "transform": [
         {
           "lookup": "properties.vic_lga__3",
@@ -67,7 +73,19 @@
           "field": "Portion Bullied",
           "type": "quantitative",
           "title": "Proportion of students bullied"
-        }
+        },
+        "tooltip": [
+          {
+            "field": "properties.vic_lga__3",
+            "type": "nominal",
+            "title": "Local Government Area"
+          },
+          {
+            "field": "Portion Bullied",
+            "type": "quantitative",
+            "title": "Proportion of bullying"
+          }
+        ]
       }
     }
   ]
