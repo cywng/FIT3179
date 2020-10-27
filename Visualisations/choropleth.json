@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Proportion of Year 7-9 students who reported being bullied in the last term (2018)",
-  "width": 500,
-  "height": 350,
+  "title": "Proportion of Year 7-9 students who reported being bullied in the last term (2016)",
+  "width": 600,
+  "height": 500,
   "projection": {
     "type": "conicEqualArea",
     "parallels": [
@@ -16,25 +16,25 @@
     ]
   },
   "data": {
-  "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/VICLGAtopojson.json",
-  "format": {
-  "type": "topojson",
-  "feature": "VICLGAgeojson"
-  }
+    "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/VICLGAtopojson.json",
+    "format": {
+      "type": "topojson",
+      "feature": "VICLGAgeojson"
+    }
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "properties.vic_lga__3",
+        "type": "nominal",
+        "title": "Local Government Area"
       },
-            "encoding": {
-        "tooltip": [
-          {
-            "field": "properties.vic_lga__3",
-            "type": "nominal",
-            "title": "Local Government Area"
-          },
-          {
-            "field": "Portion Bullied",
-            "type": "quantitative"
-          }
-        ]
-      },
+      {
+        "field": "Portion Bullied",
+        "type": "quantitative"
+      }
+    ]
+  },
   "layer": [
     {
       "mark": {
@@ -44,7 +44,6 @@
       }
     },
     {
-
       "transform": [
         {
           "lookup": "properties.vic_lga__3",
@@ -66,7 +65,8 @@
         "color": {
           "field": "Portion Bullied",
           "type": "quantitative",
-          "title": "Proportion of students bullied"
+          "title": ["Proportion of","students bullied"],
+          "scale":{ "domain": [0,0.3] }
         }
       }
     }
