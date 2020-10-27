@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Proportion of Year 7-9 students who reported being bullied in the last term (2016)",
   "width": 600,
-  "height": 500,
+  "height": 350,
   "projection": {
     "type": "conicEqualArea",
     "parallels": [
