@@ -30,10 +30,10 @@
     }
 
     .page {
-      width: 1700px;
+      width: 900px;
       background-color: white;
       margin: auto;
-      padding: 50px;
+      padding: 70px;
       padding-top: 35px;
     }
 
@@ -43,15 +43,15 @@
 
     .description h2,
     h1 {
-      margin-top: 0px;
+      margin-top: 10px;
     }
 
     .description-right {
-      padding-left: 20px;
+      padding-left: 0px;
     }
 
     .description-left {
-      padding-right: 20px;
+      padding-right: 0px;
     }
 
     .pure-g {
@@ -68,7 +68,7 @@
 
   <div class="page">
 
-    <!-- pure grid group -->
+    <!-- Title and subtitle -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <h1>Bullying trends in Victoria (2008-2016)</h1>
@@ -77,20 +77,48 @@
     </div>
     <!-- end pure grid group -->
 
+    <!-- Choropleth map -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis1" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- Caption/small text -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p>The choropleth map shows trends across Victoria</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- Scatter plot -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis3" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- More text -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <p>There is a negative correlation between education and bullying</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div id="vis1" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-4">
-        <div id="vis2" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-4">
         <div class="description description-right">
           <h2>Gender Trends</h2>
           <p>Text about time-trends in gender. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
         </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis2" class="vis-container"></div>
       </div>
     </div>
     <!-- end pure grid group -->
@@ -98,9 +126,9 @@
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div id="vis3" class="vis-container"></div>
+        <div id="vis4" class="vis-container"></div>
       </div>
-      <div class="pure-u-1-4">
+      <div class="pure-u-1-2">
         <div class="description description-right">
           <h2>Melbourne Metro</h2>
           <p>Text about overall distribution in metro melb. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -114,31 +142,20 @@
             Posuere morbi leo urna molestie at elementum eu facilisis sed. </p>
         </div>
       </div>
-      <div class="pure-u-1-4">
-        <div id="vis4" class="vis-container"></div>
-      </div>
     </div>
     <!-- end pure grid group -->
 
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div class="description description-left">
-          <h2>This is the third section</h2>
-          <p>More text goes here, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.
-          </p>
-        </div>
-      </div>
-      <div class="pure-u-1-4">
-        <div id="vis5" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-4">
         <div class="description description-right">
           <h2>Decrease metro</h2>
           <p>Text about time-trends in metro. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
         </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div id="vis5" class="vis-container"></div>
       </div>
     </div>
     <!-- end pure grid group -->
