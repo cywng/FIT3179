@@ -1,50 +1,101 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": "container",
-  "height": 200,
-  "title": "Bullying over time",
-  "data": {"url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/JoinedDataFiltered.csv"},
+  "height": 250,
+  "title": "Bullying over time in the biggest LGAs",
+  "data": {
+    "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/JoinedDataFiltered.csv"
+  },
   "transform": [
     {
       "filter": {
         "field": "LGA",
-        "oneOf": ["WYNDHAM", "CASEY", "MONASH", "BENALLA", "HUME", "MELBOURNE","BRIMBANK","MORELAND"]
+        "oneOf": [
+          "WYNDHAM",
+          "CASEY",
+          "MONASH",
+          "FRANKSTON",
+          "HUME",
+          "MELBOURNE",
+          "BRIMBANK",
+          "GREATER DANDENONG",
+          "YARRA RANGES"
+        ]
       }
     },
-    {"filter": {"field": "Year", "oneOf": [2008, 2016]}}
+    {
+      "filter": {
+        "field": "Year",
+        "oneOf": [
+          2008,
+          2016
+        ]
+      }
+    }
   ],
   "encoding": {
-    "x": {
+    "y": {
       "field": "Portion Bullied",
       "type": "quantitative",
-      "title": "Portion of students bullied"
+      "title": "Percent of students bullied"
     },
-    "y": {
+    "x": {
       "field": "LGA",
       "type": "nominal",
       "title": "Local Government Area",
-      "axis": {"offset": 5, "ticks": false, "minExtent": 70, "domain": false}
+      "axis": {
+        "offset": 5,
+        "ticks": false,
+        "minExtent": 70,
+        "domain": false
+      }
     }
   },
   "layer": [
     {
       "mark": "line",
       "encoding": {
-        "detail": {"field": "LGA", "type": "nominal"},
-        "color": {"value": "#db646f"}
+        "detail": {
+          "field": "LGA",
+          "type": "nominal"
+        }
       }
     },
     {
-      "mark": {"type": "point", "filled": true},
+      "mark": {
+        "type": "point",
+        "filled": true
+      },
       "encoding": {
         "color": {
           "field": "Year",
           "type": "ordinal",
-          "scale": {"domain": [2008, 2016], "range": ["#e6959c", "#911a24"]},
+          "scale": {
+            "domain": [
+              2008,
+              2016
+            ]
+          },
           "title": "Year"
         },
-        "size": {"value": 100},
-        "opacity": {"value": 1}
+        "tooltip": [
+          {
+            "field": "LGA",
+            "type": "nominal",
+            "title": "Local Government Area"
+          },
+          {
+            "field": "Portion Bullied",
+            "type": "quantitative",
+            "title": "Percent Bullied"
+          }
+        ],
+        "size": {
+          "value": 100
+        },
+        "opacity": {
+          "value": 1
+        }
       }
     }
   ]

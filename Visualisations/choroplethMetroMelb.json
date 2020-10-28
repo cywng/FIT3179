@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Bullying statistics in Metropolitan Melbourne",
+  "title": "Bullying Statistics in Metropolitan Melbourne",
   "width": "container",
   "height": 300,
   "projection": {
@@ -31,7 +31,8 @@
       },
       {
         "field": "Portion Bullied",
-        "type": "quantitative"
+        "type": "quantitative",
+        "title": "Percent Bullied"
       }
     ]
   },
@@ -65,9 +66,18 @@
         "color": {
           "field": "Portion Bullied",
           "type": "quantitative",
-          "title": ["Proportion of students bullied"],
-          "scale":{ "domain": [0,0.3] },
-          "legend": {"orient": "bottom"}
+          "title": [
+            "Percent of students bullied"
+          ],
+          "scale": {
+            "domain": [
+              0,
+              35
+            ]
+          },
+          "legend": {
+            "orient": "bottom"
+          }
         }
       }
     }

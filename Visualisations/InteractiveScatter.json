@@ -4,78 +4,129 @@
     "height": 400,
     "title": "Bullying vs NAPLAN Results",
     "data": {
-      "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/JoinedDataFiltered.csv"
+        "url": "https://raw.githubusercontent.com/cywng/FIT3179/main/Data/JoinedDataFiltered.csv"
     },
     "params": [
-      {
-        "name": "Year",
-        "value": 2008,
-        "bind": {
-          "input": "range",
-          "min": 2008,
-          "max": 2016,
-          "step": 1,
-          "name": "Select year: "
+        {
+            "name": "Year",
+            "value": 2008,
+            "bind": {
+                "input": "range",
+                "min": 2008,
+                "max": 2016,
+                "step": 1,
+                "name": "Select year: "
+            }
         }
-      }
     ],
-    "transform": [{"filter": "datum.Year==Year"}],
+    "transform": [
+        {
+            "filter": "datum.Year==Year"
+        }
+    ],
     "encoding": {
-      "x": {
-        "field": "NaplanAvg",
-        "type": "quantitative",
-        "title": "Naplan Score",
-        "scale": {"domain": [0.87, 1]}
-      },
-      "y": {
-        "field": "Portion Bullied",
-        "title": "Percent of students bullied",
-        "type": "quantitative",
-        "scale": {"domain": [0, 0.40]}
-      }
+        "x": {
+            "field": "NaplanAvg",
+            "type": "quantitative",
+            "title": "NAPLAN Score",
+            "scale": {
+                "domain": [
+                    0.87,
+                    1
+                ]
+            }
+        },
+        "y": {
+            "field": "Portion Bullied",
+            "title": "Percent of students bullied",
+            "type": "quantitative",
+            "scale": {
+                "domain": [
+                    0,
+                    40
+                ]
+            }
+        }
     },
     "layer": [
-      {
-        "mark": "circle",
-        "encoding": {
-          "size": {
-            "field": "Total Students",
-            "type": "quantitative"
-          },
-          "color": {
-            "condition": {
-              "test": "datum['LGA'] == 'BANYULE'||datum['LGA'] == 'BAYSIDE'||datum['LGA'] == 'BOROONDARA'||datum['LGA'] == 'BIRMBANK'||datum['LGA'] == 'DAREBIN'||datum['LGA'] == 'FRANKSTON'||datum['LGA'] == 'GLEN EIRA'||datum['LGA'] == 'GREATER DANDENONG'||datum['LGA'] == 'HOBSONS BAY'||datum['LGA'] == 'KINGSTON'||datum['LGA'] == 'KNOX'||datum['LGA'] == 'MANNINGHAM'||datum['LGA'] == 'MARIBYRNONG'||datum['LGA'] == 'MAROONDAH'||datum['LGA'] == 'MELBOURNE'||datum['LGA'] == 'MONASH'||datum['LGA'] == 'MOONEE VALLEY'||datum['LGA'] == 'MORELAND'||datum['LGA'] == 'MORNINGTON PENINSULA'||datum['LGA'] == 'NILLUMBIK'||datum['LGA'] == 'PORT PHILLIP'||datum['LGA'] == 'STONNINGTON'||datum['LGA'] == 'WHITEHORSE'||datum['LGA'] == 'YARRA'||datum['LGA'] == 'YARRA RANGES'||datum['LGA'] == 'CARDINIA'||datum['LGA'] == 'CASEY'||datum['LGA'] == 'HUME'||datum['LGA'] == 'MELTON'||datum['LGA'] == 'WHITTLESEA'||datum['LGA'] == 'WYNDHAM'",
-              "value": "#0A11EA"
+        {
+            "mark": "circle",
+            "encoding": {
+                "size": {
+                    "field": "Total Students",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [
+                            1000,
+                            2000,
+                            3000,
+                            4000
+                        ],
+                        "range": [
+                            50,
+                            100,
+                            150,
+                            200,
+                            250
+                        ]
+                    }
+                },
+                "color": {
+                    "field": "Section of State",
+                    "type": "nominal"
+                },
+                "tooltip": [
+                    {
+                        "field": "LGA",
+                        "type": "nominal",
+                        "title": "Local Government Area"
+                    },
+                    {
+                        "field": "Total Students",
+                        "type": "quantitative"
+                    },
+                    {
+                        "field": "Portion Bullied",
+                        "type": "quantitative",
+                        "title": "Percent Bullied"
+                    },
+                    {
+                        "field": "NaplanAvg",
+                        "type": "quantitative",
+                        "title": "Naplan Score"
+                    },
+                    {
+                        "field": "Year",
+                        "type": "quantitative"
+                    }
+                ]
             }
-          },
-          "tooltip": [
-            {"field": "LGA", "type": "nominal"},
-            {"field": "Portion Bullied", "type": "quantitative", "title": "Percent Bullied"},
-            {"field": "NaplanAvg", "type": "quantitative", "title": "Naplan Score"},
-            {"field": "Total Students", "type": "quantitative"},
-            {"field": "Year", "type": "quantitative"}
-          ]
-        }
-      },
-      {
-        "mark": {
-          "type": "text",
-          "align": "left",
-          "baseline": "middle",
-          "dx": 12,
-          "fontSize": 11
         },
-        "encoding": {
-          "text": {"field": "LGA", "type": "nominal"},
-          "color": {"value": "black"},
-          "opacity": {
-            "condition": {
-              "test": "datum['LGA'] == 'MONASH'||datum['LGA'] == 'WHITEHORSE'||datum['LGA'] == 'BOROONDARA'||datum['LGA'] == 'CASEY'||datum['LGA'] == 'GREATER DANDENONG'||datum['LGA'] == 'WYNDHAM'||datum['LGA'] == 'HUME'||datum['LGA'] == 'BIRMBANK'||datum['LGA'] == 'MANNINGHAM'||datum['LGA'] == 'BENALLA'",
-              "value": 1
+        {
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "baseline": "middle",
+                "dx": 10,
+                "fontSize": 11
             },
-            "value": 0
-          }
+            "encoding": {
+                "text": {
+                    "field": "LGA",
+                    "type": "nominal"
+                },
+                "color": {
+                    "value": "black"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['LGA'] == 'MONASH'||datum['LGA'] == 'HUME'||datum['LGA'] == 'FRANKSTON'||datum['LGA'] == 'CASEY'||datum['LGA'] == 'GREATER DANDENONG'||datum['LGA'] == 'WYNDHAM'||datum['LGA'] == 'BIRMBANK'||datum['LGA'] == 'YARRA RANGES'",
+                        "value": 1
+                    },
+                    "value": 0
+                }
+            }
         }
-      }
     ]
-  }
+}
