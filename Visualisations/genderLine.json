@@ -98,6 +98,7 @@
                     "mark": {
                         "type": "text",
                         "align": "left",
+                        "font": "Oxygen",
                         "dx": 4
                     },
                     "encoding": {
@@ -113,6 +114,10 @@
     "config": {
         "view": {
             "stroke": null
-        }
+        },
+        "axis": {"labelFont": "Oxygen", "titleFont": "Oxygen"},
+        "legend": {"labelFont": "Oxygen", "titleFont": "Oxygen"},
+        "header": {"labelFont": "Oxygen", "titleFont": "Oxygen"},
+        "title": {"font": "Oxygen", "fontSize": 16, "fontWeight": 600}
     }
 }
