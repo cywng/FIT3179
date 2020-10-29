@@ -10,12 +10,12 @@
         "x": {
             "field": "Year",
             "type": "temporal",
-            "title": "Year"
+            "title": "Year"            
         },
         "y": {
             "field": "Percent",
             "type": "quantitative",
-            "title": "Percent"
+            "title": "Percent Bullied"
         },
         "color": {
             "condition": {
@@ -52,7 +52,25 @@
                 "point": true,
                 "strokeWidth": 8,
                 "stroke": "transparent"
-            }
+            },
+            "encoding": {
+        "tooltip": [
+            {
+                "field": "Percent",
+                "type": "quantitative",
+                "title": "Percent Bullied"
+              },
+              {
+                "field": "Year",
+                "type": "temporal",
+                "timeUnit": "year",
+                "title": "Year"
+              },
+              {
+                "field": "Gender",
+                "type": "nominal"
+              }
+        ]}
         },
         {
             "mark": "line"

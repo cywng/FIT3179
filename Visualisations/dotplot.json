@@ -78,18 +78,22 @@
           },
           "title": "Year"
         },
-        "tooltip": [
-          {
-            "field": "LGA",
-            "type": "nominal",
-            "title": "Local Government Area"
-          },
-          {
-            "field": "Portion Bullied",
-            "type": "quantitative",
-            "title": "Percent Bullied"
-          }
-        ],
+    "tooltip": [
+      {
+        "field": "LGA",
+        "type": "nominal",
+        "title": "Local Government Area"
+      },
+      {
+        "field": "Portion Bullied",
+        "type": "quantitative",
+        "title": "Percent Bullied"
+      },
+      {
+        "field": "Year",
+        "type": "quantitative"
+      }
+    ],
         "size": {
           "value": 100
         },

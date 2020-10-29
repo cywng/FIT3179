@@ -70,10 +70,9 @@
             "Percent of students bullied"
           ],
           "scale": {
-            "domain": [
-              0,
-              35
-            ]
+            "type": "threshold",
+            "domain": [10,14,18,22],
+            "range": ["#c6dbef","#9ecae1","#6baed6","#4292c6","#2171b5"]
           },
           "legend": {
             "orient": "bottom"

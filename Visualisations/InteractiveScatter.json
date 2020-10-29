@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "width": "container",
+    "width": 600,
     "height": 400,
     "title": "Bullying vs NAPLAN Results",
     "data": {
