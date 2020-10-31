@@ -83,6 +83,10 @@
                         "title": "Local Government Area"
                     },
                     {
+                        "field": "Section of State",
+                        "type": "nominal"
+                    },
+                    {
                         "field": "Total Students",
                         "type": "quantitative"
                     },
